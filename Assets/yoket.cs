@@ -15,6 +15,10 @@ public class yoket : MonoBehaviour {
 			}
 		}
 	}
+
+	
+
+	
 	// Update is called once per frame
 	void Update () {
 		
