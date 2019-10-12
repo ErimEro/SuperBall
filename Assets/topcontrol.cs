@@ -11,7 +11,7 @@ public bool topFırlatıldı = true;
  	void Start () {
 		//bar=Resources.Load<Image>("powerbar");
 		
-		bar = GameObject.Find("Image").GetComponent<Image>();
+		bar = GameObject.Find("bar").GetComponent<Image>();
 		bar.fillAmount=0;
 
 	}
