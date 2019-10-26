@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class topcontrol : MonoBehaviour {
 
-public float guc;
+public float guc =0;
 public Image bar;
 public int topNumarası=0;
 public bool topFırlatıldı = true;
@@ -21,18 +21,21 @@ public bool topFırlatıldı = true;
 		if(!topFırlatıldı){
 			print("Selam");
 		if(Input.GetKey(KeyCode.Space)){
-			if(guc<30){
-				guc++;
-			}
+			if(guc<10){
+				guc+=Time.deltaTime*2; 
+			} else if(guc>10){
+				guc=10.00000f;
+			} 
+			print(guc);
 		}
 		if(Input.GetKeyUp(KeyCode.Space)){
-			GetComponent<Rigidbody2D>().velocity=new Vector2(guc,0);
+			GetComponent<Rigidbody2D>().velocity=new Vector2(guc*2,0);
 			topFırlatıldı=true;
 			guc=0;
 			GameObject.Find("respawner").GetComponent<respawnerScript>().StartRespawnCounter();
 			
 		}
-		bar.fillAmount = guc/30;
+		bar.fillAmount = guc/10;
 	}
 	}
 }
