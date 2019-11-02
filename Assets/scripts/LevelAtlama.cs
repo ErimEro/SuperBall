@@ -11,8 +11,9 @@ public class LevelAtlama : MonoBehaviour {
 	}
 	private void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.tag == "ball"){
-			GameObject.Find("respawner").GetComponent<respawnerScript>().SeviyeyiArttır();
-			
+		//	GameObject.Find("respawner").GetComponent<respawnerScript>().SeviyeyiArttır();
+			GameObject.Find("UI").transform.GetChild(5).gameObject.SetActive(true);
+			transform.parent.GetChild(5).gameObject.SetActive(true);
 			
 		}
 	}
