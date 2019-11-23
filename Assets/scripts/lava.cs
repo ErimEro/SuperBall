@@ -12,6 +12,7 @@ public class lava : MonoBehaviour {
 		print("bana bisey carpti");
 		if(other.gameObject.tag=="ball"){
 			Destroy(other.gameObject);
+			GetComponent<AudioSource>().Play(0);
 		}
 		
 	}
