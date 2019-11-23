@@ -9,7 +9,6 @@ public class respawnerScript : MonoBehaviour {
  
  private Vector3 position3;
  private Vector3 position4;
- private bool isEnabled=false;
  private float speed=1.0f;
 private int tophakki=6;
 public Text topHakkıBonus;
@@ -212,36 +211,28 @@ private float ScoreTime=30000;
 
         if(Seviye==17){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.1f,true);
-		 if(isEnabled){
-			transform.position=Vector3.Lerp(position1,position2,Mathf.PingPong(Time.time*speed,0.3f));
-		}
+		 
 	}
 	 if(Seviye==18){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.2f,true);
-		 if(isEnabled){
-			transform.position=Vector3.Lerp(position1,position2,Mathf.PingPong(Time.time*speed,0.5f));
-		}
+		 
 	}
 	 if(Seviye==19){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.3f,true);
-		 if(isEnabled){
-			transform.position=Vector3.Lerp(position1,position2,Mathf.PingPong(Time.time*speed,0.7f));
-		}
+		 
 	}
 	 if(Seviye==20){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.5f,true);
-		 if(isEnabled){
-			transform.position=Vector3.Lerp(position1,position2,Mathf.PingPong(Time.time*speed,1.0f));
-		}
+		 
 	}
 		 
 }
-	public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
+	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
 		position1=pos1;
 		position2=pos2;
 		speed=spd;
-		isEnabled=enable;
-	}
+		isKutuPingPongEnabled=enable;
+	}*/
 	public void RespawnPlatform2(){
 			/*if(Seviye>=11){
 			platform2Quternionu = Quaternion.Euler(0f,0f,Random.Range(0f,50f));
