@@ -10,7 +10,8 @@ public class respawnerScript : MonoBehaviour {
  private Vector3 position3;
  private Vector3 position4;
  private float speed=1.0f;
-private int tophakki=6;
+    private int tophakki=5;
+    private int launchTimes = 0;
 public Text topHakkıBonus;
 public List<GameObject> topPrefab=new List<GameObject>();
 private int topNumarası=0;
@@ -42,13 +43,21 @@ private float ScoreTime=30000;
 	// Use this for initialization
 	void Start () {
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();?????????
-		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="TOP HAKKI: " + tophakki;
+		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="TOP HAKKI: " + (tophakki - launchTimes);
 		
 		SeviyeGostergesi= GameObject.Find("SeviyeGöstergesi").GetComponent<Text>();
 		topHakkıBonus=GameObject.Find("TopBonusPuan").GetComponent<Text>();
 	    SeviyeyiArttır();
 		
 	}
+    public void addToLaunched(int var)
+    {
+        launchTimes += var;
+        if(launchTimes >= tophakki)
+        {
+            launchTimes = tophakki;
+        }
+    }
 	public void StartRespawnCounter(){
 		StartCoroutine(RespawnTop());
 	}
@@ -57,18 +66,17 @@ private float ScoreTime=30000;
 		topSayaci++;
 		GameObject top1 = Instantiate(topPrefab[topNumarası],topPozisyonu,topQuternionu,gameObject.transform);
 		top1.GetComponent<topcontrol>().topNumarası= topSayaci;
-		if(tophakki>0){
-			tophakki--;
-		}
-		topHakkıBonus.text="BONUS PUAN: " + tophakki*1000;
-		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();????????????
-		 GameObject.Find("TopHakkiUI").GetComponent<Text>().text="TOP HAKKI: " + tophakki;
+		
+		topHakkıBonus.text="BONUS PUAN: " + (tophakki - launchTimes) *1000;
+		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();
+
+		 GameObject.Find("TopHakkiUI").GetComponent<Text>().text="TOP HAKKI: " + (tophakki - launchTimes);
 	}
 	// Update is called once per frame
 	void Update () {
 	
 		ScoreTime -= Time.deltaTime * 500;	
-		print(ScoreTime);
+		//print(ScoreTime);
 
 	}
 
@@ -88,6 +96,7 @@ private float ScoreTime=30000;
 		RespawnKutu();
 		ResetScore();
 		tophakki=5;
+        launchTimes = 0;
 		
 		arkaplanResmi.sprite=arkaplanResimleri[Random.Range(0,arkaplanResimleri.Count)];
 		//zeminRengi.color=new Color(Random.Range(0f,1f), Random.Range(0f,1f), Random.Range(0f,1f), 1f);
@@ -206,7 +215,7 @@ private float ScoreTime=30000;
 		if(Seviye==15){
 			kutuPozisyonu=new Vector3(8.59f,-1.49f,0f);
 		}  
-		print(kutuPozisyonu);
+		//print(kutuPozisyonu);
 		GameObject Kutu=Instantiate(KutuPrefab,kutuPozisyonu,kutuQuaternionu,gameObject.transform);
 
         if(Seviye==17){

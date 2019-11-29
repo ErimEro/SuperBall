@@ -19,23 +19,24 @@ public bool topFırlatıldı = true;
 
 	void Update () {
 		if(!topFırlatıldı){
-			print("Selam");
-		if(Input.GetKey(KeyCode.Space)){
+			//print("Selam");
+		if(Input.GetKey(KeyCode.Mouse0)){
 			if(guc<10){
 				guc+=Time.deltaTime*2; 
 			} else if(guc>10){
 				guc=10.00000f;
 			} 
-			print(guc);
+			//print(guc);
 		}
-		if(Input.GetKeyUp(KeyCode.Space)){
+		if(Input.GetKeyUp(KeyCode.Mouse0)){
 			GetComponent<Rigidbody2D>().velocity=new Vector2(guc*2,0);
 			topFırlatıldı=true;
 			guc=0;
-			GameObject.Find("respawner").GetComponent<respawnerScript>().StartRespawnCounter();
-			
-		}
-		bar.fillAmount = guc/10;
-	}
+                GameObject.Find("respawner").GetComponent<respawnerScript>().addToLaunched(1);
+
+                GameObject.Find("respawner").GetComponent<respawnerScript>().StartRespawnCounter();
+            }
+            bar.fillAmount = guc/10;
+	    }
 	}
 }
