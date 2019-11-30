@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class respawnerScript : MonoBehaviour {
-
  private Vector3 position1;
  private Vector3 position2;
  

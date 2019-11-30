@@ -18,6 +18,9 @@ public class TopUI : MonoBehaviour {
 		}
 	}
 	public void TopNumarasınıYolla(){
-		GameObject.Find("respawner").GetComponent<respawnerScript>().setBallNumber(topNumarası);
-	}
+		if(GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye >= topSeviyeSınırı){
+
+			GameObject.Find("respawner").GetComponent<respawnerScript>().setBallNumber(topNumarası);
+		}
+	} 
 }
