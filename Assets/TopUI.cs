@@ -8,8 +8,8 @@ public class TopUI : MonoBehaviour {
 		  public int topNumarası;
 	// Use this for initialization
 	private void OnEnable(){
-		transform.GetChild(0).GetComponent<Text>().text="LEVEL " + topSeviyeSınırı;
-		int CurrentLevel=GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye;
+        setBallUiText();
+        int CurrentLevel=GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye;
 		if(CurrentLevel<topSeviyeSınırı){
 			GetComponent<Image>().color=new Color(0.3f,0.3f,0.3f);
 		} 
@@ -17,7 +17,35 @@ public class TopUI : MonoBehaviour {
 			GetComponent<Image>().color=new Color(1f,1f,1f);
 		}
 	}
-	public void TopNumarasınıYolla(){
-		GameObject.Find("respawner").GetComponent<respawnerScript>().setBallNumber(topNumarası);
-	}
+
+    private void Update()
+    {
+        if(GameObject.Find("respawner").GetComponent<respawnerScript>().getBallNumber() == topNumarası)
+        {
+            transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
+            for (var i = 0; i < transform.parent.childCount; i++)
+            {
+                if (transform.parent.GetChild(i).gameObject.GetComponent<TopUI>().topNumarası != topNumarası)
+                {
+                    transform.parent.GetChild(i).gameObject.GetComponent<TopUI>().setBallUiText();
+                }
+            }
+        }
+    }
+    public void TopNumarasınıYolla(){
+		if(GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye >= topSeviyeSınırı){
+
+			GameObject.Find("respawner").GetComponent<respawnerScript>().setBallNumber(topNumarası);
+		}
+	} 
+
+    public void setBallUiText()
+    {
+        transform.GetChild(0).GetComponent<Text>().text = "LEVEL " + topSeviyeSınırı;
+    }
+
+    public void SelectedBall()
+    {
+
+    }
 }
