@@ -9,7 +9,7 @@ public class lava : MonoBehaviour {
 		
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		print("bana bisey carpti");
+
 		if(other.gameObject.tag=="ball"){
 			Destroy(other.gameObject);
 			GetComponent<AudioSource>().Play(0);

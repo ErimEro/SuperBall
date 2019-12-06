@@ -17,7 +17,7 @@ private int topNumarası=0;
 public GameObject platformPrefab;
 public GameObject KutuPrefab;
 public GameObject platform2Prefab;
-public float waitTime=2;
+public float waitTime=2f;
 public int topSayaci=0;
 public Text SeviyeGostergesi;
 public int Seviye=0;
@@ -61,8 +61,11 @@ private float ScoreTime=30000;
 		StartCoroutine(RespawnTop());
 	}
 	   IEnumerator RespawnTop(){
-		yield return new WaitForSeconds(waitTime);
-		topSayaci++;
+
+        yield return new WaitForSeconds(waitTime);
+        print("top" + topNumarası);
+
+        topSayaci++;
 		GameObject top1 = Instantiate(topPrefab[topNumarası],topPozisyonu,topQuternionu,gameObject.transform);
 		top1.GetComponent<topcontrol>().topNumarası= topSayaci;
 		
@@ -73,9 +76,9 @@ private float ScoreTime=30000;
 	}
 	// Update is called once per frame
 	void Update () {
-	
+	    
 		ScoreTime -= Time.deltaTime * 500;	
-		//print(ScoreTime);
+		print(ScoreTime);
 
 	}
 
@@ -90,12 +93,14 @@ private float ScoreTime=30000;
 		else if(Seviye>=51){
 			RespawnPlatform2();
 		}
-		StartCoroutine(RespawnTop());
+        tophakki = 5;
+        launchTimes = 0;
+
+        StartCoroutine(RespawnTop());
           
 		RespawnKutu();
 		ResetScore();
-		tophakki=5;
-        launchTimes = 0;
+		
 		
 		arkaplanResmi.sprite=arkaplanResimleri[Random.Range(0,arkaplanResimleri.Count)];
 		//zeminRengi.color=new Color(Random.Range(0f,1f), Random.Range(0f,1f), Random.Range(0f,1f), 1f);
@@ -324,4 +329,9 @@ private float ScoreTime=30000;
 	public void setBallNumber(int num){
 		topNumarası=num;
 	}
+
+    public int getBallNumber()
+    {
+        return topNumarası;
+    }
 }
