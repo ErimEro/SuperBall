@@ -15,7 +15,12 @@ public GameObject durdurmaPaneli;
 		
 	}
 
-	public void durdurmaPaneliAçKapa(bool var){
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void durdurmaPaneliAçKapa(bool var){
 		durdurmaPaneli.SetActive(var);
 		if(var){
 			Time.timeScale=0;
