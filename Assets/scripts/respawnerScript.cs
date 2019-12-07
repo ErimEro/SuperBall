@@ -102,6 +102,9 @@ private float ScoreTime=30000;
 		if(Seviye<=5){
 		  zeminRengi.color=new Color(1.0f,1.0f,1.0f,1.0f);
 		}
+		else if(Seviye<=10){
+		  zeminRengi.color=new Color(0f,246f,255f,255f);
+		}
 		if(Seviye<=5){
 		arkaplanResmi.sprite=arkaplanResimleri[(0)];
 		} else if(Seviye>5 && Seviye <= 10){
@@ -134,68 +137,86 @@ private float ScoreTime=30000;
 	    if(Seviye==1){
 			platformPozisyonu=new Vector3(1.5f,0.58f,-0.05994832f);
 		}
-		 if(Seviye==2){
+		else if(Seviye==2){
 			platformPozisyonu=new Vector3(-0.5f,0.58f,-0.05994832f);
 		}
-		if(Seviye==3){
+		else if(Seviye==3){
 			platformPozisyonu=new Vector3(-6.23f,0.58f,-0.05994832f);
 		}
-		if(Seviye==4){
+		else if(Seviye==4){
 			platformPozisyonu=new Vector3(-0.04f,1.255358f,-0.05994832f);
 		}
-		if(Seviye==5){
+		else if(Seviye==5){
 			platformPozisyonu=new Vector3(-3.45f,1.8f,-0.05994832f);
 		}
-		if(Seviye==6){
+		else if(Seviye==6){
 			platformPozisyonu=new Vector3(-7.34f,2.42f,-0.05994832f);
 		}
-		if(Seviye==7){
+		else if(Seviye==7){
+				platformPozisyonu=new Vector3(0.25f,0.7f,0f);
+			}
+			else if(Seviye==8){
+				platformPozisyonu=new Vector3(0.25f,2.7f,0f);
+			}
+			else if(Seviye==9){
+				platformPozisyonu=new Vector3(-7.41f,2.7f,0f);
+			}
+			else if(Seviye==10){
+                platformPozisyonu=new Vector3(-6.7f,1.42f,0f);
+			}
+		
+		else if(Seviye==11){
           platformPozisyonu=new Vector3(-4.42f,-1.21f,-0.05994832f);
 		  platformQuaternionu = Quaternion.Euler(0f,0f,20f);
 		}
-		if(Seviye==8){
+		else if(Seviye==12){
           platformPozisyonu=new Vector3(-0.89f,1.46f,-0.05994f);
 		  platformQuaternionu = Quaternion.Euler(0f,0f,20f);
 		}
-		if(Seviye==9){
+		else if(Seviye==13){
 			platformPozisyonu=new Vector3(-8.97f,1.46f,-0.05994832f);
 			platformQuaternionu=Quaternion.Euler(0f,0f,20f);
 		}
-		if(Seviye==10){
-				platformPozisyonu=new Vector3(0.25f,0.7f,0f);
-			}
-			if(Seviye==11){
-				platformPozisyonu=new Vector3(0.25f,2.7f,0f);
-			}
-			if(Seviye==12){
-				platformPozisyonu=new Vector3(-7.41f,2.7f,0f);
-			}
-				if(Seviye==13){
-                platformPozisyonu=new Vector3(-6.7f,1.42f,0f);
-			}
-			if(Seviye==14){
+			else if(Seviye==14){
 				platformPozisyonu=new Vector3(-1.69f,0.14f,0f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==15){
+			else if(Seviye==15){
                 platformPozisyonu=new Vector3(-8.19f,1.0f,0f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==16){
+			else if(Seviye==16){
                 platformPozisyonu=new Vector3(-5.8f,1.67f,0f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==17){
+			else if(Seviye==17){
                 platformPozisyonu=new Vector3(-2.5f,1.46f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
-			if(Seviye==18){
+			
+			else if(Seviye==18){
                 platformPozisyonu=new Vector3(-3.0f,1.46f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
-			if(Seviye==19){
+			else if(Seviye==19){
                 platformPozisyonu=new Vector3(-4.76f,1.99f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
-				if(Seviye==20){
+			else if(Seviye==20){
                 platformPozisyonu=new Vector3(-6.84f,1.48f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+			}
+			else if(Seviye==21){
+                platformPozisyonu=new Vector3(-4.51f,-0.29f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+			}
+			else if(Seviye==22){
+                platformPozisyonu=new Vector3(-4.9f,2.03f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+			}
+			else if(Seviye==23){
+                platformPozisyonu=new Vector3(-8.92f,0.99f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,15f);
 			}
 		
 	
@@ -222,18 +243,25 @@ private float ScoreTime=30000;
 		 
 	}
 	 if(Seviye==18){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.2f,true);
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.15f,true);
 		 
 	}
 	 if(Seviye==19){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.3f,true);
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.2f,true);
 		 
 	}
 	 if(Seviye==20){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.5f,true);
-		 
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.25f,true); 
 	}
-		 
+    if(Seviye==21){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.30f,true);	 
+	}
+	  if(Seviye==22){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.35f,true);	 
+	}
+	if(Seviye==23){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.40f,true);	 
+	}
 }
 	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
 		position1=pos1;
