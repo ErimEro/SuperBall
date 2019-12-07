@@ -17,7 +17,7 @@ public class LevelAtlama : MonoBehaviour {
 			GameObject.Find("UI").transform.GetChild(4).gameObject.SetActive(false);
 			GameObject.Find("respawner").GetComponent<AudioSource>().Play(0);
 			GameObject.Find("respawner").GetComponent<respawnerScript>().SetScore();
-
+			GameObject.Find("respawner").GetComponent<respawnerScript>().setIsBallSpawnable(false);
 		}
 	}
 

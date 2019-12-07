@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class respawnerScript : MonoBehaviour {
  private Vector3 position1;
  private Vector3 position2;
- 
+ private bool isBallSpawnable =true;
  private Vector3 position3;
  private Vector3 position4;
  private float speed=1.0f;
@@ -41,8 +41,12 @@ private float ScoreTime=30000;
 
 	// Use this for initialization
 	void Start () {
+		if(Seviye != 0) {
+			Seviye = PlayerPrefs.GetInt("SonSeviye");
+
+		}
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();?????????
-		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="TOP HAKKI: " + (tophakki - launchTimes);
+		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
 		
 		SeviyeGostergesi= GameObject.Find("SeviyeGöstergesi").GetComponent<Text>();
 		topHakkıBonus=GameObject.Find("TopBonusPuan").GetComponent<Text>();
@@ -63,38 +67,39 @@ private float ScoreTime=30000;
 	   IEnumerator RespawnTop(){
 
         yield return new WaitForSeconds(waitTime);
-        print("top" + topNumarası);
 
+        if(isBallSpawnable) {
         topSayaci++;
 		GameObject top1 = Instantiate(topPrefab[topNumarası],topPozisyonu,topQuternionu,gameObject.transform);
 		top1.GetComponent<topcontrol>().topNumarası= topSayaci;
 		
-		topHakkıBonus.text="BONUS PUAN: " + (tophakki - launchTimes) *1000;
+		topHakkıBonus.text="BONUS: " + (tophakki - launchTimes) *1000;
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();
 
-		 GameObject.Find("TopHakkiUI").GetComponent<Text>().text="TOP HAKKI: " + (tophakki - launchTimes);
+		 GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
+		}
 	}
 	// Update is called once per frame
 	void Update () {
-	    
 		ScoreTime -= Time.deltaTime * 500;	
-		print(ScoreTime);
-
 	}
 
+	public void resetBallCount(){
+		tophakki = 5;
+        launchTimes = 0;
+	}
 	public void SeviyeyiArttır(){
 		foreach(Transform child in gameObject.transform){
 			GameObject.Destroy(child.gameObject);
 		}
 		Seviye++;
-		if(Seviye<=50){//!!!!!!!!!!!!!!!!!!!
-			RespawnPlatform();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		if(Seviye<=50){
+			RespawnPlatform();
 		}
 		else if(Seviye>=51){
 			RespawnPlatform2();
 		}
-        tophakki = 5;
-        launchTimes = 0;
+		resetBallCount();
 
         StartCoroutine(RespawnTop());
           
@@ -354,6 +359,13 @@ private float ScoreTime=30000;
 		}
 	}
 
+	public void resetBonusUi(){
+		resetBallCount();
+		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
+		topHakkıBonus.text="BONUS: " + (tophakki - launchTimes) *1000;
+
+	}
+
 	public void setBallNumber(int num){
 		topNumarası=num;
 	}
@@ -361,5 +373,14 @@ private float ScoreTime=30000;
     public int getBallNumber()
     {
         return topNumarası;
+    }
+
+	public void setIsBallSpawnable(bool var) {
+		isBallSpawnable = var;
+	}
+
+	void OnApplicationQuit()
+    {
+		PlayerPrefs.SetInt("SonSeviye", Seviye);
     }
 }
