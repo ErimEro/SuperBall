@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1499,15 +1499,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.93
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.99
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.059948318
+      value: -0.05994832
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2798,11 +2798,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1323198871011120, guid: 6773dff1b9265d047b23ea430eac1c0d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4208718852033412, guid: 6773dff1b9265d047b23ea430eac1c0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.73
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 4208718852033412, guid: 6773dff1b9265d047b23ea430eac1c0d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2917,7 +2917,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'TOP HAKKI: 5'
+  m_Text: 'BALLS: 5'
 --- !u!222 &1477565504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3395,7 +3395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643575484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.78, y: 0.13, z: 0}
+  m_LocalPosition: {x: -2.78, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

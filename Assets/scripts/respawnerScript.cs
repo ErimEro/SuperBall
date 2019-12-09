@@ -41,10 +41,10 @@ private float ScoreTime=30000;
 
 	// Use this for initialization
 	void Start () {
-		if(Seviye != 0) {
-			Seviye = PlayerPrefs.GetInt("SonSeviye");
+	//	if(Seviye != 0) {
+	//		Seviye = PlayerPrefs.GetInt("SonSeviye");
 
-		}
+	//	}
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();?????????
 		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
 		
@@ -148,87 +148,103 @@ private float ScoreTime=30000;
 			platformPozisyonu=new Vector3(1.5f,0.58f,-0.05994832f);
 		}
 		else if(Seviye==2){
-			platformPozisyonu=new Vector3(-0.5f,0.58f,-0.05994832f);
+			platformPozisyonu=new Vector3(-1.5f,0.58f,-0.05994832f);
 		}
 		else if(Seviye==3){
-			platformPozisyonu=new Vector3(-6.23f,0.58f,-0.05994832f);
+			platformPozisyonu=new Vector3(-6.26f,0.58f,-0.05994832f);
 		}
 		else if(Seviye==4){
-			platformPozisyonu=new Vector3(-0.04f,1.255358f,-0.05994832f);
+			platformPozisyonu=new Vector3(1.5f,1.255358f,-0.05994832f);
 		}
 		else if(Seviye==5){
-			platformPozisyonu=new Vector3(-3.45f,1.8f,-0.05994832f);
+			platformPozisyonu=new Vector3(-1.5f,1.255358f,-0.05994832f);
 		}
 		else if(Seviye==6){
-			platformPozisyonu=new Vector3(-7.34f,2.42f,-0.05994832f);
+			platformPozisyonu=new Vector3(-6.26f,1.255358f,-0.05994832f);
 		}
 		else if(Seviye==7){
-				platformPozisyonu=new Vector3(0.25f,0.7f,0f);
+				platformPozisyonu=new Vector3(1.5f,1.8f,-0.05994832f);
 			}
 			else if(Seviye==8){
-				platformPozisyonu=new Vector3(0.25f,2.7f,0f);
+				platformPozisyonu=new Vector3(-1.5f,1.8f,-0.05994832f);
 			}
 			else if(Seviye==9){
-				platformPozisyonu=new Vector3(-7.41f,2.7f,0f);
+				platformPozisyonu=new Vector3(-6.26f,1.8f,-0.05994832f);
 			}
 			else if(Seviye==10){
-                platformPozisyonu=new Vector3(-6.7f,1.42f,0f);
+                platformPozisyonu = new Vector3(1.2f,0.2f,-0.05994832f);
+				platformQuaternionu = Quaternion.Euler(0f,0f,10f);
 			}
 		
 		else if(Seviye==11){
-          platformPozisyonu=new Vector3(-4.42f,-1.21f,-0.05994832f);
-		  platformQuaternionu = Quaternion.Euler(0f,0f,20f);
+          platformPozisyonu=new Vector3(1.2f,1.0f,-0.05994832f);
+		  platformQuaternionu = Quaternion.Euler(0f,0f,11f);
 		}
 		else if(Seviye==12){
-          platformPozisyonu=new Vector3(-0.89f,1.46f,-0.05994f);
-		  platformQuaternionu = Quaternion.Euler(0f,0f,20f);
+          platformPozisyonu=new Vector3(1.2f,2.4f,-0.05994832f);
+		  platformQuaternionu = Quaternion.Euler(0f,0f,12f);
 		}
 		else if(Seviye==13){
-			platformPozisyonu=new Vector3(-8.97f,1.46f,-0.05994832f);
-			platformQuaternionu=Quaternion.Euler(0f,0f,20f);
+			platformPozisyonu=new Vector3(-1.36f,0.2f,-0.05994832f);
+			platformQuaternionu=Quaternion.Euler(0f,0f,13f);
 		}
 			else if(Seviye==14){
-				platformPozisyonu=new Vector3(-1.69f,0.14f,0f);
-				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+				platformPozisyonu=new Vector3(-1.36f,1.0f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,14f);
 			}
 			else if(Seviye==15){
-                platformPozisyonu=new Vector3(-8.19f,1.0f,0f);
+                platformPozisyonu=new Vector3(-1.36f,2.4f,-0.05994832f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
 			}
 			else if(Seviye==16){
-                platformPozisyonu=new Vector3(-5.8f,1.67f,0f);
-				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+                platformPozisyonu=new Vector3(-6.3f,0.2f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,16f);
 			}
 			else if(Seviye==17){
-                platformPozisyonu=new Vector3(-2.5f,1.46f,-0.05994832f);
-					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+                platformPozisyonu=new Vector3(-6.3f,1.0f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,17f);
 			}
 			
 			else if(Seviye==18){
-                platformPozisyonu=new Vector3(-3.0f,1.46f,-0.05994832f);
-					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+                platformPozisyonu=new Vector3(-6.3f,2.4f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,18f);
 			}
 			else if(Seviye==19){
-                platformPozisyonu=new Vector3(-4.76f,1.99f,-0.05994832f);
+                platformPozisyonu=new Vector3(0.8f,2.4f,-0.05994832f);
 					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
 			else if(Seviye==20){
-                platformPozisyonu=new Vector3(-6.84f,1.48f,-0.05994832f);
+                platformPozisyonu=new Vector3(0.8f,1.5f,-0.05994832f);
 					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
 			else if(Seviye==21){
-                platformPozisyonu=new Vector3(-4.51f,-0.29f,-0.05994832f);
-					platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+                platformPozisyonu=new Vector3(-2.22f,2.56f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
 			else if(Seviye==22){
-                platformPozisyonu=new Vector3(-4.9f,2.03f,-0.05994832f);
-					platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+                platformPozisyonu=new Vector3(0.8f,0.36f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
 			else if(Seviye==23){
-                platformPozisyonu=new Vector3(-8.92f,0.99f,-0.05994832f);
-					platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+                platformPozisyonu=new Vector3(-1.93f,1.45f,-0.05994832f);
+					platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 			}
-		
+			else if(Seviye==24){
+             platformPozisyonu=new Vector3(-5.28f,2.5f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}
+			else if(Seviye==25){
+             platformPozisyonu=new Vector3(-2.46f,0.36f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}
+			else if(Seviye==26){
+             platformPozisyonu=new Vector3(-4.93f,1.42f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}
+			else if(Seviye==27){
+             platformPozisyonu=new Vector3(-5.3f,0.36f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}	
 	
 	
 		// platformPozisyonu = new Vector3(Random.Range(-7.8f,-4f),Random.Range(1.0f,2.8f),0f);
@@ -239,38 +255,50 @@ private float ScoreTime=30000;
 
 	public void RespawnKutu(){
 		//kutuPozisyonu=new Vector3(Random.Range(4.8f,6.1f),-1.49f,0f);
-		if(Seviye<=14){
+		if(Seviye<=18){
 			kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
 		}
-		if(Seviye==15){
-			kutuPozisyonu=new Vector3(8.59f,-1.49f,0f);
-		}  
+		//if(Seviye==15){
+			//kutuPozisyonu=new Vector3(8.59f,-1.49f,0f);
+	//				}  
 		//print(kutuPozisyonu);
 		GameObject Kutu=Instantiate(KutuPrefab,kutuPozisyonu,kutuQuaternionu,gameObject.transform);
 
-        if(Seviye==17){
+       /* if(Seviye==17){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.1f,true);
 		 
 	}
 	 if(Seviye==18){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.15f,true);
 		 
-	}
+	}*/
 	 if(Seviye==19){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.2f,true);
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.1f,true);
 		 
 	}
 	 if(Seviye==20){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.25f,true); 
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.12f,true); 
 	}
     if(Seviye==21){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.30f,true);	 
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.15f,true);	 
 	}
 	  if(Seviye==22){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.35f,true);	 
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.17f,true);	 
 	}
 	if(Seviye==23){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.40f,true);	 
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.20f,true);	 
+	}
+	if(Seviye==24){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.23f,true);	 
+	}
+	if(Seviye==25){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.25f,true);	 
+	}
+	if(Seviye==26){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.27f,true);	 
+	}
+	if(Seviye==27){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.30f,true);	 
 	}
 }
 	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
@@ -379,8 +407,8 @@ private float ScoreTime=30000;
 		isBallSpawnable = var;
 	}
 
-	void OnApplicationQuit()
+/*	void OnApplicationQuit()
     {
 		PlayerPrefs.SetInt("SonSeviye", Seviye);
-    }
+    }*/
 }
