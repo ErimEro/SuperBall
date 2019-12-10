@@ -1499,11 +1499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: -5.72
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1519,11 +1519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.12186928
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9925462
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_RootOrder
@@ -1539,7 +1539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4854710862389018, guid: 6365976d862933b42824f31b8b924f46, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6365976d862933b42824f31b8b924f46, type: 3}
@@ -3373,7 +3373,7 @@ MonoBehaviour:
   waitTime: 2
   topSayaci: 0
   SeviyeGostergesi: {fileID: 0}
-  Seviye: 0
+  Seviye: 27
   arkaplanResimleri:
   - {fileID: 21300000, guid: feac988943be21e43babc737bfc6cd97, type: 3}
   - {fileID: 21300000, guid: 5b46d86248488ad42aa7cdcabcf195ce, type: 3}

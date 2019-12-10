@@ -245,6 +245,42 @@ private float ScoreTime=30000;
              platformPozisyonu=new Vector3(-5.3f,0.36f,-0.05994832f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
 				}	
+			else if(Seviye==28){
+             platformPozisyonu=new Vector3(-5.72f,2.32f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,10f);
+				}
+			else if(Seviye==29){
+             platformPozisyonu=new Vector3(1.5f,2.32f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,11f);
+				}	
+			else if(Seviye==30){
+             platformPozisyonu=new Vector3(-5.72f,0.2f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,12f);
+				}	
+			else if(Seviye==31){
+             platformPozisyonu=new Vector3(1.5f,0.2f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,13f);
+				}
+			else if(Seviye==32){
+             platformPozisyonu=new Vector3(-2.0f,2.32f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,14f);
+				}
+			else if(Seviye==33){
+             platformPozisyonu=new Vector3(-2.0f,0.2f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,15f);
+				}				
+			else if(Seviye==34){
+             platformPozisyonu=new Vector3(-5.72f,1.15f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,16f);
+				}									
+			else if(Seviye==35){
+             platformPozisyonu=new Vector3(1.5f,1.15f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,17f);
+				}								
+			else if(Seviye==36){
+             platformPozisyonu=new Vector3(-2.0f,1.15f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,18f);
+				}																																													
 	
 	
 		// platformPozisyonu = new Vector3(Random.Range(-7.8f,-4f),Random.Range(1.0f,2.8f),0f);
@@ -299,6 +335,33 @@ private float ScoreTime=30000;
 	}
 	if(Seviye==27){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.30f,true);	 
+	}
+	if(Seviye==28){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.33f,true);	 
+	}
+	if(Seviye==29){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.35f,true);	 
+	}
+	if(Seviye==30){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.37f,true);	 
+	}
+	if(Seviye==31){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.40f,true);	 
+	}
+	if(Seviye==32){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.43f,true);	 
+	}
+	if(Seviye==33){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.45f,true);	 
+	}
+	if(Seviye==34){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.47f,true);	 
+	}
+	if(Seviye==35){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.50f,true);	 
+	}
+	if(Seviye==36){
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.53f,true);	 
 	}
 }
 	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
