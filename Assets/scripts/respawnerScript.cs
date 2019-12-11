@@ -9,8 +9,8 @@ public class respawnerScript : MonoBehaviour {
  private Vector3 position3;
  private Vector3 position4;
  private float speed=1.0f;
-    private int tophakki=5;
-    private int launchTimes = 0;
+private int tophakki=5;
+private int launchTimes = 0;
 public Text topHakkıBonus;
 public List<GameObject> topPrefab=new List<GameObject>();
 private int topNumarası=0;
@@ -37,14 +37,15 @@ private Vector3 KutuPingPongPos2  = new Vector3(7f,-1.49f,0f);
 private Vector3 PlatformPingPongPos3 = new Vector3(-7.84f,1.45f,-0.05994832f);
 private Vector3 PlatformPingPongPos4  = new Vector3(0.0f,1.45f,-0.05994832f);
 private float ScoreTime=30000;
+	private int maxLevel = 57;
 
 
 	// Use this for initialization
 	void Start () {
-	//	if(Seviye != 0) {
-	//		Seviye = PlayerPrefs.GetInt("SonSeviye");
+		if(PlayerPrefs.HasKey("SonSeviye")) {
+			Seviye = PlayerPrefs.GetInt("SonSeviye");
 
-	//	}
+	    }
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();?????????
 		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
 		
@@ -93,6 +94,7 @@ private float ScoreTime=30000;
 			GameObject.Destroy(child.gameObject);
 		}
 		Seviye++;
+		print(Seviye);
 		if(Seviye<=50){
 			RespawnPlatform();
 		}
@@ -146,31 +148,40 @@ private float ScoreTime=30000;
 		}*/
 	    if(Seviye==1){
 			platformPozisyonu=new Vector3(1.5f,0.58f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
 		}
 		else if(Seviye==2){
 			platformPozisyonu=new Vector3(-1.5f,0.58f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
 		}
 		else if(Seviye==3){
 			platformPozisyonu=new Vector3(-6.26f,0.58f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
 		}
 		else if(Seviye==4){
 			platformPozisyonu=new Vector3(1.5f,1.255358f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
 		}
 		else if(Seviye==5){
 			platformPozisyonu=new Vector3(-1.5f,1.255358f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
 		}
 		else if(Seviye==6){
 			platformPozisyonu=new Vector3(-6.26f,1.255358f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
 		}
 		else if(Seviye==7){
 				platformPozisyonu=new Vector3(1.5f,1.8f,-0.05994832f);
-			}
+			Quaternion platformQuaternionu = Quaternion.identity;
+		}
 			else if(Seviye==8){
 				platformPozisyonu=new Vector3(-1.5f,1.8f,-0.05994832f);
-			}
+			Quaternion platformQuaternionu = Quaternion.identity;
+		}
 			else if(Seviye==9){
 				platformPozisyonu=new Vector3(-6.26f,1.8f,-0.05994832f);
-			}
+			Quaternion platformQuaternionu = Quaternion.identity;
+		}
 			else if(Seviye==10){
                 platformPozisyonu = new Vector3(1.2f,0.2f,-0.05994832f);
 				platformQuaternionu = Quaternion.Euler(0f,0f,10f);
@@ -470,8 +481,19 @@ private float ScoreTime=30000;
 		isBallSpawnable = var;
 	}
 
-/*	void OnApplicationQuit()
+	void OnApplicationQuit()
     {
-		PlayerPrefs.SetInt("SonSeviye", Seviye);
-    }*/
+		PlayerPrefs.SetInt("SonSeviye", Seviye-1);
+    }
+
+	public int getMaxLevel()
+	{
+		return maxLevel;
+	}
+
+	public void changeLevel(int level)
+	{
+		Seviye = level-1;
+		
+	}
 }
