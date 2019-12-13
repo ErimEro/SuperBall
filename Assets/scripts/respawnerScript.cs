@@ -8,6 +8,8 @@ public class respawnerScript : MonoBehaviour {
  private bool isBallSpawnable =true;
  private Vector3 position3;
  private Vector3 position4;
+ private Vector3 position5;
+ private Vector3 position6;
  private float speed=1.0f;
 private int tophakki=5;
 private int launchTimes = 0;
@@ -34,6 +36,8 @@ public Image arkaplanResmi;
 public SpriteRenderer zeminRengi;
 private Vector3 KutuPingPongPos1 = new Vector3(1f,-1.49f,0f);
 private Vector3 KutuPingPongPos2  = new Vector3(7f,-1.49f,0f);
+private Vector3 KutuPingPongPosDikey1 = new Vector3(6.3f,-1.49f,0f);
+private Vector3 KutuPingPongPosDikey2 = new Vector3(6.3f,2.71f,0f);
 private Vector3 PlatformPingPongPos3 = new Vector3(-7.84f,1.45f,-0.05994832f);
 private Vector3 PlatformPingPongPos4  = new Vector3(0.0f,1.45f,-0.05994832f);
 private float ScoreTime=30000;
@@ -104,8 +108,9 @@ private float ScoreTime=30000;
 		resetBallCount();
 
         StartCoroutine(RespawnTop());
-          
-		RespawnKutu();
+
+            RespawnKutu(); 
+
 		ResetScore();
 		
 		
@@ -291,7 +296,11 @@ private float ScoreTime=30000;
 			else if(Seviye==36){
              platformPozisyonu=new Vector3(-2.0f,1.15f,-0.05994832f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,18f);
-				}																																													
+				}	
+			else if(Seviye==37){
+             platformPozisyonu=new Vector3(-2.0f,1.15f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,18f);
+				}																																															
 	
 	
 		// platformPozisyonu = new Vector3(Random.Range(-7.8f,-4f),Random.Range(1.0f,2.8f),0f);
@@ -373,6 +382,10 @@ private float ScoreTime=30000;
 	}
 	if(Seviye==36){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.53f,true);	 
+	}
+	if(Seviye==37){
+		//kutuPozisyonu=new Vector3(6.3f,2.71f,0.0f);
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.1f,true);
 	}
 }
 	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
