@@ -34,10 +34,10 @@ private Quaternion platform2Quaternionu = Quaternion.identity;
 public List<Sprite> arkaplanResimleri =new List<Sprite>();
 public Image arkaplanResmi;
 public SpriteRenderer zeminRengi;
-private Vector3 KutuPingPongPos1 = new Vector3(1f,-1.49f,0f);
-private Vector3 KutuPingPongPos2  = new Vector3(7f,-1.49f,0f);
-private Vector3 KutuPingPongPosDikey1 = new Vector3(6.3f,-1.49f,0f);
-private Vector3 KutuPingPongPosDikey2 = new Vector3(6.3f,2.71f,0f);
+private Vector3 KutuPingPongPos1 = new Vector3(1f,-1.52f,0f);
+private Vector3 KutuPingPongPos2  = new Vector3(7f,-1.52f,0f);
+private Vector3 KutuPingPongPosDikey1 = new Vector3(6.3f,-1.52f,0f);
+private Vector3 KutuPingPongPosDikey2 = new Vector3(6.3f,0.6f,0f);
 private Vector3 PlatformPingPongPos3 = new Vector3(-7.84f,1.45f,-0.05994832f);
 private Vector3 PlatformPingPongPos4  = new Vector3(0.0f,1.45f,-0.05994832f);
 private float ScoreTime=30000;
@@ -298,9 +298,41 @@ private float ScoreTime=30000;
 				platformQuaternionu= Quaternion.Euler(0f,0f,18f);
 				}	
 			else if(Seviye==37){
-             platformPozisyonu=new Vector3(-2.0f,1.15f,-0.05994832f);
-				platformQuaternionu= Quaternion.Euler(0f,0f,18f);
-				}																																															
+             platformPozisyonu=new Vector3(1.6f,0.6f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}		
+			else if(Seviye==38){
+             platformPozisyonu=new Vector3(-1.6f,0.6f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}			
+			else if(Seviye==39){
+             platformPozisyonu=new Vector3(-6.0f,0.6f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}
+			else if(Seviye==40){
+             platformPozisyonu=new Vector3(-6.0f,1.5f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}
+			else if(Seviye==41){
+             platformPozisyonu=new Vector3(-6.0f,2.6f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}	
+			else if(Seviye==42){
+             platformPozisyonu=new Vector3(-1.6f,2.6f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}		
+			else if(Seviye==43){
+             platformPozisyonu=new Vector3(1.6f,2.6f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}	
+			else if(Seviye==44){
+             platformPozisyonu=new Vector3(1.6f,1.5f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}				
+			else if(Seviye==45){
+             platformPozisyonu=new Vector3(-1.6f,1.5f,-0.05994832f);
+				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
+				}																																																																		
 	
 	
 		// platformPozisyonu = new Vector3(Random.Range(-7.8f,-4f),Random.Range(1.0f,2.8f),0f);
@@ -384,8 +416,31 @@ private float ScoreTime=30000;
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.53f,true);	 
 	}
 	if(Seviye==37){
-		//kutuPozisyonu=new Vector3(6.3f,2.71f,0.0f);
 		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.1f,true);
+	}
+	if(Seviye==38){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.12f,true);
+	}
+	if(Seviye==39){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.15f,true);
+	}
+	if(Seviye==40){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.17f,true);
+	}
+	if(Seviye==41){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.2f,true);
+	}
+	if(Seviye==42){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.23f,true);
+	}
+	if(Seviye==43){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.25f,true);
+	}
+	if(Seviye==44){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.27f,true);
+	}
+	if(Seviye==45){
+		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.3f,true);
 	}
 }
 	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
