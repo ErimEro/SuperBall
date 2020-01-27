@@ -10,6 +10,9 @@ public class respawnerScript : MonoBehaviour {
  private Vector3 position4;
  private Vector3 position5;
  private Vector3 position6;
+  private Vector3 position7;
+ private Vector3 position8;
+
  private float speed=1.0f;
 private int tophakki=5;
 private int launchTimes = 0;
@@ -18,6 +21,8 @@ public List<GameObject> topPrefab=new List<GameObject>();
 private int topNumarası=0;
 public GameObject platformPrefab;
 public GameObject KutuPrefab;
+public GameObject EngelPrefab;
+
 public GameObject platform2Prefab;
 public float waitTime=2f;
 public int topSayaci=0;
@@ -27,8 +32,10 @@ private Vector3 topPozisyonu = new Vector3(-8.57f,2.16f,0f);
 private Quaternion topQuternionu = Quaternion.identity;
 private Vector3 platformPozisyonu = new Vector3(-8.57f,1.5f,0f);
 private Quaternion platformQuaternionu = Quaternion.identity;
-private Vector3 kutuPozisyonu=new Vector3(3.97f,-1.49f,0f);
+private Vector3 kutuPozisyonu=new Vector3(5.98f,-1.49f,0f);
 private Quaternion kutuQuaternionu=Quaternion.identity;
+private Vector3 EngelPozisyonu = new Vector3(3.97f,2f,0f);
+private Quaternion EngelQuaternionu = Quaternion.identity;
 private Vector3 platform2Pozisyonu = new Vector3(-6.27f,0.37f,0f);
 private Quaternion platform2Quaternionu = Quaternion.identity;
 public List<Sprite> arkaplanResimleri =new List<Sprite>();
@@ -38,8 +45,10 @@ private Vector3 KutuPingPongPos1 = new Vector3(1f,-1.52f,0f);
 private Vector3 KutuPingPongPos2  = new Vector3(7f,-1.52f,0f);
 private Vector3 KutuPingPongPosDikey1 = new Vector3(6.3f,-1.52f,0f);
 private Vector3 KutuPingPongPosDikey2 = new Vector3(6.3f,0.6f,0f);
-private Vector3 PlatformPingPongPos3 = new Vector3(-7.84f,1.45f,-0.05994832f);
-private Vector3 PlatformPingPongPos4  = new Vector3(0.0f,1.45f,-0.05994832f);
+private Vector3 EngelPingPong1 = new Vector3(1f,0f,0f);
+private Vector3 EngelPingPong2 = new Vector3(7f,0f,0f);
+//private Vector3 PlatformPingPongPos3 = new Vector3(-7.84f,1.45f,-0.05994832f);
+//private Vector3 PlatformPingPongPos4  = new Vector3(0.0f,1.45f,-0.05994832f);
 private float ScoreTime=30000;
 	private int maxLevel = 57;
 
@@ -99,13 +108,18 @@ private float ScoreTime=30000;
 		}
 		Seviye++;
 		print(Seviye);
-		if(Seviye<=50){
+		if(Seviye<=99){
 			RespawnPlatform();
 		}
-		else if(Seviye>=51){
+		else if(Seviye>=100){
 			RespawnPlatform2();
 		}
 		resetBallCount();
+
+       if(Seviye>=46){
+		   RespawnEngel();
+	   }
+		
 
         StartCoroutine(RespawnTop());
 
@@ -332,7 +346,33 @@ private float ScoreTime=30000;
 			else if(Seviye==45){
              platformPozisyonu=new Vector3(-1.6f,1.5f,-0.05994832f);
 				platformQuaternionu= Quaternion.Euler(0f,0f,0f);
-				}																																																																		
+				}	
+			else if(Seviye==46){
+             platformPozisyonu=new Vector3(0.2f,0.58f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
+				}		
+			else if(Seviye==47){
+            platformPozisyonu=new Vector3(0.2f,1.255358f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
+				}	
+			else if(Seviye==48){
+            platformPozisyonu=new Vector3(-0.83f,1.2f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
+				}	
+			else if(Seviye==49){
+            platformPozisyonu=new Vector3(-3.13f,1.2f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
+				}		
+			else if(Seviye==50){
+            platformPozisyonu=new Vector3(-3.13f,2.16f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
+				}	
+			else if(Seviye==51){
+            platformPozisyonu=new Vector3(-5.49f,2.16f,-0.05994832f);
+			Quaternion platformQuaternionu = Quaternion.identity;
+				}		
+								
+																																																																					
 	
 	
 		// platformPozisyonu = new Vector3(Random.Range(-7.8f,-4f),Random.Range(1.0f,2.8f),0f);
@@ -340,8 +380,30 @@ private float ScoreTime=30000;
 		Instantiate(platformPrefab,platformPozisyonu,platformQuaternionu,gameObject.transform);
 		
 		}
-
-	public void RespawnKutu(){
+		   public void RespawnEngel(){
+        
+            GameObject Engel=Instantiate(EngelPrefab,EngelPozisyonu,EngelQuaternionu,gameObject.transform);
+         if(Seviye==46){
+			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPong1,EngelPingPong2,0.1f,true);
+			}
+    		else if(Seviye==47){
+			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPong1,EngelPingPong2,0.1f,true);
+			}
+			else if(Seviye==48){
+			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPong1,EngelPingPong2,0.1f,true);
+			}
+			else if(Seviye==49){
+			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPong1,EngelPingPong2,0.1f,true);
+			}
+			else if(Seviye==50){
+			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPong1,EngelPingPong2,0.1f,true);
+			}
+			else if(Seviye==51){
+			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPong1,EngelPingPong2,0.1f,true);
+			}
+			
+		}
+      	public void RespawnKutu(){
 		//kutuPozisyonu=new Vector3(Random.Range(4.8f,6.1f),-1.49f,0f);
 		if(Seviye<=18){
 			kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
@@ -442,38 +504,52 @@ private float ScoreTime=30000;
 	if(Seviye==45){
 		Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPosDikey2,KutuPingPongPosDikey1,0.3f,true);
 	}
+	if(Seviye==46){
+	kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
+	}	
+	if(Seviye==47){
+    kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
+	}
+	if(Seviye==48){
+    kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
+	}
+	if(Seviye==49){
+    kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
+	}
+	if(Seviye==50){
+    kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
+	}
+	if(Seviye==51){
+    kutuPozisyonu=new Vector3(5.8f,-1.49f,0f);
+	}
+
 }
-	/*public void EnablePingPongKutu(Vector3 pos1,Vector3 pos2,float spd,bool enable){
-		position1=pos1;
-		position2=pos2;
-		speed=spd;
-		isKutuPingPongEnabled=enable;
-	}*/
+   
 	public void RespawnPlatform2(){
 			/*if(Seviye>=11){
 			platform2Quternionu = Quaternion.Euler(0f,0f,Random.Range(0f,50f));
 			}*/
-			if(Seviye==51){//11
+			if(Seviye==100){//11
 				platform2Pozisyonu=new Vector3(0.25f,0.7f,0f);
 			}
-			if(Seviye==52){//12
+			if(Seviye==101){//12
 				platform2Pozisyonu=new Vector3(0.25f,2.7f,0f);
 			}
-			if(Seviye==53){//13
+			if(Seviye==102){//13
 				platform2Pozisyonu=new Vector3(-7.41f,2.7f,0f);
 			}
-				if(Seviye==54){//14
+				if(Seviye==103){//14
                 platform2Pozisyonu=new Vector3(-6.7f,1.42f,0f);
 			}
-			if(Seviye==55){//15
+			if(Seviye==104){//15
 				platform2Pozisyonu=new Vector3(-1.69f,0.14f,0f);
 				platform2Quaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==56){//16
+			if(Seviye==105){//16
                 platform2Pozisyonu=new Vector3(-8.19f,1.0f,0f);
 				platform2Quaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==57){//17
+			if(Seviye==106){//17
                 platform2Pozisyonu=new Vector3(-5.8f,1.67f,0f);
 				platform2Quaternionu= Quaternion.Euler(0f,0f,15f);
 			}
