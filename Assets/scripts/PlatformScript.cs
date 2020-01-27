@@ -16,7 +16,7 @@ public class PlatformScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(isEnabled){
-			transform.position=Vector3.Lerp(position3,position4,Mathf.PingPong(Time.time*speed,1.0f));
+			transform.position=Vector2.Lerp(position3,position4,Mathf.PingPong(Time.time*speed,1.0f));
 		}
 	}
 	public void EnablePingPongPlatform(Vector3 pos3,Vector3 pos4,float spd,bool enable){
