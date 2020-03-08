@@ -22,6 +22,7 @@ private int topNumarası=0;
 public GameObject platformPrefab;
 public GameObject KutuPrefab;
 public GameObject EngelPrefab;
+public GameObject BoruPrefab;
 
 public GameObject platform2Prefab;
 public float waitTime=2f;
@@ -36,6 +37,8 @@ private Vector3 kutuPozisyonu=new Vector3(5.98f,-1.49f,0f);
 private Quaternion kutuQuaternionu=Quaternion.identity;
 private Vector3 EngelPozisyonu = new Vector3(3.97f,2f,0f);
 private Quaternion EngelQuaternionu = Quaternion.identity;
+private Vector3 BoruPozisyonu = new Vector3 (0.5f,0f,0f);
+private Quaternion BoruQuaternionu = Quaternion.identity;
 private Vector3 platform2Pozisyonu = new Vector3(-6.27f,0.37f,0f);
 private Quaternion platform2Quaternionu = Quaternion.identity;
 public List<Sprite> arkaplanResimleri =new List<Sprite>();
@@ -66,10 +69,10 @@ private float ScoreTime=30000;
 
 	// Use this for initialization
 	void Start () {
-		if(PlayerPrefs.HasKey("SonSeviye")) {
-			Seviye = PlayerPrefs.GetInt("SonSeviye");
-
-	    }
+		//if(PlayerPrefs.HasKey("SonSeviye")) {
+		//	Seviye = PlayerPrefs.GetInt("SonSeviye");
+	    //}
+		Seviye = PlayerPrefs.GetInt("SelectedLevel");
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();?????????
 		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
 		
@@ -117,7 +120,7 @@ private float ScoreTime=30000;
 		foreach(Transform child in gameObject.transform){
 			GameObject.Destroy(child.gameObject);
 		}
-		Seviye++;
+		//Seviye++;
 		print(Seviye);
 		if(Seviye<=99){
 			RespawnPlatform();
@@ -127,10 +130,12 @@ private float ScoreTime=30000;
 		}
 		resetBallCount();
 
-           if(Seviye>=46){
+           if(Seviye>=46 && Seviye <=75){
 		   RespawnEngel();
 	   }
-		
+		if (Seviye>75){
+			RespawnBoru();
+		}
     
         StartCoroutine(RespawnTop());
 
@@ -579,8 +584,16 @@ private float ScoreTime=30000;
 			if(Seviye==75){
 			Engel.GetComponent<EngelScript>().EnablePingPongEngel(EngelPingPongDikey7,EngelPingPongDikey8,0.1f,true);
 			}
+		   }
+
+			public void RespawnBoru(){
+				if(Seviye==76){
+					BoruPozisyonu = platformPozisyonu + new Vector3(0.5f,0f,0f);
+				} 
+				Instantiate(BoruPrefab,BoruPozisyonu,BoruQuaternionu,gameObject.transform);
+			}
 			
-		}
+		
       	public void RespawnKutu(){
 		//kutuPozisyonu=new Vector3(Random.Range(4.8f,6.1f),-1.49f,0f);
 		if(Seviye<=18){
