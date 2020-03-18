@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class levelSelect : MonoBehaviour
 {
-    public void LevelSelected(int value){
-       PlayerPrefs.SetInt("SelectedLevel", value);
+    private int LevelValue = 0;
+    public void LevelSelected(){
+       PlayerPrefs.SetInt("SelectedLevel", LevelValue);
+    }
+
+    public void SetLevelValue(int val) {
+        LevelValue = val;
+        return;
+    }
+    public int GetLevelValue() {
+        return LevelValue;
     }
 }
