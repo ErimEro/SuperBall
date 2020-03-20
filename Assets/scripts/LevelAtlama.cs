@@ -18,7 +18,19 @@ public class LevelAtlama : MonoBehaviour {
 			GameObject.Find("respawner").GetComponent<AudioSource>().Play(0);
 			GameObject.Find("respawner").GetComponent<respawnerScript>().SetScore();
 			GameObject.Find("respawner").GetComponent<respawnerScript>().setIsBallSpawnable(false);
+			LevelFinish();
 		}
+	}
+	private void LevelFinish() {
+		int currentUnlockedLevel = GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye +1;
+		if(PlayerPrefs.GetInt("UnlockedLevels") < currentUnlockedLevel){
+			PlayerPrefs.SetInt("UnlockedLevels", currentUnlockedLevel);
+		}	
+			
+		int currentScore= GameObject.Find("respawner").GetComponent<respawnerScript>().GetScore();
+		string levelScoreString = (currentUnlockedLevel - 1).ToString() + "LevelScore";
+		PlayerPrefs.SetInt(levelScoreString, currentScore);
+		print(PlayerPrefs.GetInt(levelScoreString));
 	}
 
 	// Update is called once per frame

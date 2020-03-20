@@ -23,7 +23,7 @@ public class SeviyeButonlari : MonoBehaviour
             
             string levelScoreString = (i+1).ToString() + "LevelScore";
             print(levelScoreString);
-            buton.transform.GetChild(1).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("levelScoreString").ToString();
+            buton.transform.GetChild(1).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt(levelScoreString).ToString();
         }
     }
 }

@@ -64,7 +64,8 @@ private Vector3 EngelPingPongDikey8 = new Vector3(5.3f,2.2f,0f);
 //private Vector3 PlatformPingPongPos3 = new Vector3(-7.84f,1.45f,-0.05994832f);
 //private Vector3 PlatformPingPongPos4  = new Vector3(0.0f,1.45f,-0.05994832f);
 private float ScoreTime=30000;
-	private int maxLevel = 57;
+private int maxLevel = 57;
+private bool firstLoad = true;
 
 
 	// Use this for initialization
@@ -120,8 +121,15 @@ private float ScoreTime=30000;
 		foreach(Transform child in gameObject.transform){
 			GameObject.Destroy(child.gameObject);
 		}
-		//Seviye++;
+		
+		if(!firstLoad){
+			Seviye++;
+		}
+		else{
+		firstLoad = false;
+		}
 		print(Seviye);
+
 		if(Seviye<=99){
 			RespawnPlatform();
 		}

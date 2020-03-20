@@ -25,18 +25,7 @@ public GameObject durdurmaPaneli;
 		SceneManager.LoadScene("LevelScene", LoadSceneMode.Single);
 	}
 
-	public void LevelFinish() {
-		int currentUnlockedLevel = GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye +1;
-		if(PlayerPrefs.GetInt("UnlockedLevels") < currentUnlockedLevel){
-			PlayerPrefs.SetInt("UnlockedLevels", currentUnlockedLevel);
-		}	
-			
-		int currentScore= GameObject.Find("respawner").GetComponent<respawnerScript>().GetScore();
-		string levelScoreString = (currentUnlockedLevel - 1).ToString() + "LevelScore";
-		PlayerPrefs.SetInt(levelScoreString, currentScore);
-
-		SceneManager.LoadScene("LevelScene", LoadSceneMode.Single);
-	}
+	
 
     public void durdurmaPaneliAçKapa(bool var){
 		durdurmaPaneli.SetActive(var);
