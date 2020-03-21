@@ -1086,7 +1086,7 @@ private bool firstLoad = true;
 		if(Score<=0){
 			Score=0;
 		}
-		//Score += tophakki * 1000;???????????
+		Score += tophakki * 1000;
 	    GameObject.Find("ScoreText").GetComponent<Text>().text="SCORE: " + Score;
 
 		Image Star1 = GameObject.Find("Star1").GetComponent<Image>();
