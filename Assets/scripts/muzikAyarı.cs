@@ -8,7 +8,7 @@ private Slider slider;
 	// Use this for initialization
 	void Start () {
 		slider=GetComponent<Slider>();
-
+		muzikÇalar = GameObject.Find("muzikcalar").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame

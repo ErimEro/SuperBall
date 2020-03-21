@@ -128,7 +128,7 @@ private bool firstLoad = true;
 		else{
 		firstLoad = false;
 		}
-		print(Seviye);
+		//print(Seviye);
 
 		if(Seviye<=99){
 			RespawnPlatform();
