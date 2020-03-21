@@ -1089,6 +1089,11 @@ private bool firstLoad = true;
 		Score += tophakki * 1000;
 	    GameObject.Find("ScoreText").GetComponent<Text>().text="SCORE: " + Score;
 
+		string levelScoreString = (Seviye).ToString() + "LevelScore";
+		PlayerPrefs.SetInt(levelScoreString, Score);
+		print(PlayerPrefs.GetInt(levelScoreString));
+		print(Seviye);
+
 		Image Star1 = GameObject.Find("Star1").GetComponent<Image>();
 		Image Star2 = GameObject.Find("Star2").GetComponent<Image>();
 		Image Star3 = GameObject.Find("Star3").GetComponent<Image>();
