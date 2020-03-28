@@ -130,15 +130,15 @@ private bool firstLoad = true;
 		}
 		//print(Seviye);
 
-		if(Seviye<=99){
+		if(Seviye<=100){
 			RespawnPlatform();
 		}
-		else if(Seviye>=100){
+		else if(Seviye>=200){
 			RespawnPlatform2();
 		}
 		resetBallCount();
 
-           if(Seviye>=46 && Seviye <=75){
+           if(Seviye>=46 && Seviye <=100){
 		   RespawnEngel();
 	   }
 		
@@ -170,13 +170,13 @@ private bool firstLoad = true;
 		arkaplanResmi.sprite=arkaplanResimleri[(4)];
 		} else if(Seviye>45 && Seviye <= 51){
 		arkaplanResmi.sprite=arkaplanResimleri[(5)];
-		} else if(Seviye>51 && Seviye <= 57){
+		} else if(Seviye>51 && Seviye <= 56){
 		arkaplanResmi.sprite=arkaplanResimleri[(6)];
-		} else if(Seviye>57 && Seviye <= 63){
+		} else if(Seviye>56 && Seviye <= 63){
 		arkaplanResmi.sprite=arkaplanResimleri[(7)];
-		} else if(Seviye>63 && Seviye <= 69){
+		} else if(Seviye>63 && Seviye <= 67){
 		arkaplanResmi.sprite=arkaplanResimleri[(8)];
-		} else if(Seviye>69 && Seviye <= 75){
+		} else if(Seviye>67 && Seviye <= 75){
 		arkaplanResmi.sprite=arkaplanResimleri[(9)];
 		}
 
@@ -790,8 +790,7 @@ private bool firstLoad = true;
 		 
 	}*/
 	 if(Seviye==19){
-        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.1f,true);
-		 
+        Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.1f,true);	 
 	}
 	 if(Seviye==20){
         Kutu.GetComponent<KutuScript>().EnablePingPongKutu(KutuPingPongPos1,KutuPingPongPos2,0.12f,true); 
@@ -1043,27 +1042,27 @@ private bool firstLoad = true;
 			/*if(Seviye>=11){
 			platform2Quternionu = Quaternion.Euler(0f,0f,Random.Range(0f,50f));
 			}*/
-			if(Seviye==100){//11
+			if(Seviye==150){//11
 				platform2Pozisyonu=new Vector3(0.25f,0.7f,0f);
 			}
-			if(Seviye==101){//12
+			if(Seviye==151){//12
 				platform2Pozisyonu=new Vector3(0.25f,2.7f,0f);
 			}
-			if(Seviye==102){//13
+			if(Seviye==152){//13
 				platform2Pozisyonu=new Vector3(-7.41f,2.7f,0f);
 			}
-				if(Seviye==103){//14
+				if(Seviye==153){//14
                 platform2Pozisyonu=new Vector3(-6.7f,1.42f,0f);
 			}
-			if(Seviye==104){//15
+			if(Seviye==154){//15
 				platform2Pozisyonu=new Vector3(-1.69f,0.14f,0f);
 				platform2Quaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==105){//16
+			if(Seviye==155){//16
                 platform2Pozisyonu=new Vector3(-8.19f,1.0f,0f);
 				platform2Quaternionu= Quaternion.Euler(0f,0f,15f);
 			}
-			if(Seviye==106){//17
+			if(Seviye==156){//17
                 platform2Pozisyonu=new Vector3(-5.8f,1.67f,0f);
 				platform2Quaternionu= Quaternion.Euler(0f,0f,15f);
 			}

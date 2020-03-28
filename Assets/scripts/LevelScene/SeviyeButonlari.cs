@@ -37,6 +37,6 @@ public class SeviyeButonlari : MonoBehaviour
                 }
         }
         GameObject.Find("SeviyeGrubu").GetComponent<RectTransform>().localPosition += new Vector3(-20000,0,0);
-        GameObject.Find("skor").GetComponent<Text>().text = "Topmal Skor: " + totalScore.ToString();
+        GameObject.Find("skor").GetComponent<Text>().text = "Total Score: " + totalScore.ToString();
     }
 }

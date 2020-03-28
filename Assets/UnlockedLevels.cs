@@ -11,7 +11,7 @@ public class UnlockedLevels : MonoBehaviour
     {
         int UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels");
         int LevelLimit = PlayerPrefs.GetInt("LevelLimit");
-        gameObject.GetComponent<Text>().text = "Açılan Seviyeler: " + UnlockedLevels.ToString() + " / " + LevelLimit.ToString(); 
+     //   gameObject.GetComponent<Text>().text = "Açılan Seviyeler: " + UnlockedLevels.ToString() + " / " + LevelLimit.ToString(); 
     }
 
     // Update is called once per frame
