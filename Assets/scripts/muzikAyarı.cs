@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class muzikAyarı : MonoBehaviour {
-public AudioSource muzikÇalar;
+public AudioSource muzikCalar;
 private Slider slider;
 	// Use this for initialization
 	void Start () {
 		slider=GetComponent<Slider>();
-		muzikÇalar = GameObject.Find("muzikcalar").GetComponent<AudioSource>();
+		muzikCalar = GameObject.Find("muzikcalar").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		muzikÇalar.volume=slider.value;
+		muzikCalar.volume=slider.value;
 	}
 }
