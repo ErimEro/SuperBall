@@ -15,7 +15,7 @@ public class SeviyeButonlari : MonoBehaviour
             PlayerPrefs.SetInt("UnlockedLevels", 1);
         }
 
-        PlayerPrefs.SetInt("LevelLimit", 100);
+        PlayerPrefs.SetInt("LevelLimit", 103);
 
         int UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels");
         int LevelLimit = PlayerPrefs.GetInt("LevelLimit");

@@ -9,7 +9,7 @@ public class LevelSceneScript : MonoBehaviour
     void Start(){
         PlayerPrefs.SetInt("SelectedLevel", -1);
         if(!PlayerPrefs.HasKey("LevelLimit")){
-            PlayerPrefs.SetInt("LevelLimit", 76);
+            PlayerPrefs.SetInt("LevelLimit", 103);
         }
     }
     public void PlayLevel(){

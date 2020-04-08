@@ -22,7 +22,7 @@ public class TopUI : MonoBehaviour {
     {
         if(GameObject.Find("respawner").GetComponent<respawnerScript>().getBallNumber() == topNumarası)
         {
-            transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
+           transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
             for (var i = 0; i < transform.parent.childCount; i++)
             {
                 if (transform.parent.GetChild(i).gameObject.GetComponent<TopUI>().topNumarası != topNumarası)
