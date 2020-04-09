@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
 public GameObject durdurmaPaneli;
+public GameObject InformationPaneli;
+
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,15 @@ public GameObject durdurmaPaneli;
 
     public void durdurmaPaneliAçKapa(bool var){
 		durdurmaPaneli.SetActive(var);
+		if(var){
+			Time.timeScale=0;
+		} else if(!var){
+			Time.timeScale=1;
+		}
+
+	}
+	 public void InformationPaneliAçKapa(bool var){
+		InformationPaneli.SetActive(var);
 		if(var){
 			Time.timeScale=0;
 		} else if(!var){

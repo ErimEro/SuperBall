@@ -134,7 +134,7 @@ private bool firstLoad = true;
 	void Update () {
 		ScoreTime -= Time.deltaTime * 500;	
 	}
-
+     
 	public void resetBallCount(){
 		tophakki = 5;
         launchTimes = 0;
@@ -230,7 +230,7 @@ private bool firstLoad = true;
 
 
 		SeviyeGostergesi.text="LEVEL " + Seviye.ToString();
-	
+
 	}
 	public void RespawnPlatform(){
 		/*if(Seviye>=5){

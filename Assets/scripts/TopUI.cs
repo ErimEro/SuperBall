@@ -41,7 +41,7 @@ public class TopUI : MonoBehaviour {
 
     public void setBallUiText()
     {
-        transform.GetChild(0).GetComponent<Text>().text = "LEVEL " + topSeviyeSınırı;
+        transform.GetChild(0).GetComponent<Text>().text = "SELECT"; 
     }
 
     public void SelectedBall()
