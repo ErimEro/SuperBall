@@ -27,7 +27,6 @@ public GameObject EngelPrefab;
 public GameObject DigerEngelPrefab;
 public GameObject SonEngelPrefab;
 public GameObject BoruPrefab;
-
 public GameObject platform2Prefab;
 public float waitTime=2f;
 public int topSayaci=0;
@@ -170,11 +169,13 @@ private bool firstLoad = true;
 		  if(Seviye>=99 && Seviye<=103){
 			  RespawnSonEngel();
 		  }
-		
+		  
+		 
     
         StartCoroutine(RespawnTop());
 
             RespawnKutu(); 
+
 
 		ResetScore();
 		

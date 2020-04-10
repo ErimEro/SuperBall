@@ -27,7 +27,6 @@ public GameObject InformationPaneli;
 		SceneManager.LoadScene("LevelScene", LoadSceneMode.Single);
 	}
 
-	
 
     public void durdurmaPaneliAçKapa(bool var){
 		durdurmaPaneli.SetActive(var);
@@ -47,6 +46,7 @@ public GameObject InformationPaneli;
 		}
 
 	}
+	
 	public void QuitGame(){
 		Application.Quit();
 	}
