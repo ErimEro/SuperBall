@@ -11,7 +11,7 @@ public class BackgroundAudioScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!PlayerPrefs.HasKey("AudioSourceExists") | PlayerPrefs.GetInt("AudioSourceExists") == 0){
+        if(!PlayerPrefs.HasKey("AudioSourceExists") || PlayerPrefs.GetInt("AudioSourceExists") == 0){
             PlayerPrefs.SetInt("AudioSourceExists", 1);
             DontDestroyOnLoad(transform.gameObject);
         } else {
