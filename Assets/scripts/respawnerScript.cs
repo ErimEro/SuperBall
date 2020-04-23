@@ -104,7 +104,7 @@ private bool firstLoad = true;
             PlayerPrefs.SetInt("SelectedLevel", 1);
         }
 
-		Seviye = PlayerPrefs.GetInt("SelectedLevel");
+		Seviye = PlayerPrefs.GetInt("UnlockedLevels");
 		if(Seviye== 1){
 			StartButton.SetActive(true);
 		}
