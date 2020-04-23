@@ -25,7 +25,7 @@ public class SeviyeButonlari : MonoBehaviour
                 //print(levelScoreString);
                 buton.transform.GetChild(1).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt(levelScoreString).ToString();
                 totalScore += PlayerPrefs.GetInt(levelScoreString);
-                } else if(i<UnlockedLevels+1){
+                } else if(i<UnlockedLevels+3){
                     GameObject buton = Instantiate(LevelButtonLocked, gameObject.transform);
                     buton.transform.GetChild(0).gameObject.GetComponent<Text>().text = (i+1).ToString();
                 }
