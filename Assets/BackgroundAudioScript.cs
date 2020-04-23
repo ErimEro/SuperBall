@@ -4,29 +4,20 @@ using UnityEngine;
 
 public class BackgroundAudioScript : MonoBehaviour
 {
-    private void Awake()
-     {
-        
-     }
-    // Start is called before the first frame update
-    void Start()
+    private static BackgroundAudioScript instance = null;
+    public static BackgroundAudioScript Instance
     {
-        if(!PlayerPrefs.HasKey("AudioSourceExists") || PlayerPrefs.GetInt("AudioSourceExists") == 0){
-            PlayerPrefs.SetInt("AudioSourceExists", 1);
-            DontDestroyOnLoad(transform.gameObject);
+         get { return instance; }
+    }
+
+    void Awake()
+    {
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+            return;
         } else {
-            GameObject.Destroy(this.gameObject);
+            instance = this;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-     void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("AudioSourceExists", 0);
+        DontDestroyOnLoad(this.gameObject);
     }
 }

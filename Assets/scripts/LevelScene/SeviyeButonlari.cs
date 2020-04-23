@@ -11,12 +11,6 @@ public class SeviyeButonlari : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!PlayerPrefs.HasKey("UnlockedLevels")){
-            PlayerPrefs.SetInt("UnlockedLevels", 1);
-        }
-
-        PlayerPrefs.SetInt("LevelLimit", 103);
-
         int UnlockedLevels = PlayerPrefs.GetInt("UnlockedLevels");
         int LevelLimit = PlayerPrefs.GetInt("LevelLimit");
         int totalScore = 0;
@@ -31,7 +25,7 @@ public class SeviyeButonlari : MonoBehaviour
                 //print(levelScoreString);
                 buton.transform.GetChild(1).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt(levelScoreString).ToString();
                 totalScore += PlayerPrefs.GetInt(levelScoreString);
-                } else if(i<UnlockedLevels+3){
+                } else if(i<UnlockedLevels+1){
                     GameObject buton = Instantiate(LevelButtonLocked, gameObject.transform);
                     buton.transform.GetChild(0).gameObject.GetComponent<Text>().text = (i+1).ToString();
                 }

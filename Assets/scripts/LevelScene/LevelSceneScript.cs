@@ -8,9 +8,6 @@ public class LevelSceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         PlayerPrefs.SetInt("SelectedLevel", -1);
-        if(!PlayerPrefs.HasKey("LevelLimit")){
-            PlayerPrefs.SetInt("LevelLimit", 103);
-        }
     }
     public void PlayLevel(){
         if(PlayerPrefs.GetInt("SelectedLevel") != -1){

@@ -10,12 +10,12 @@ public class respawnerScript : MonoBehaviour {
  private Vector3 position4;
  private Vector3 position5;
  private Vector3 position6;
-  private Vector3 position7;
+ private Vector3 position7;
  private Vector3 position8;
-  private Vector3 position9;
+ private Vector3 position9;
  private Vector3 position10 ;
 
- private float speed=1.0f;
+private float speed=1.0f;
 private int tophakki=5;
 private int launchTimes = 0;
 public Text topHakkıBonus;
@@ -28,6 +28,7 @@ public GameObject DigerEngelPrefab;
 public GameObject SonEngelPrefab;
 public GameObject BoruPrefab;
 public GameObject platform2Prefab;
+public GameObject StartButton;
 public float waitTime=2f;
 public int topSayaci=0;
 public Text SeviyeGostergesi;
@@ -91,16 +92,29 @@ private bool firstLoad = true;
 
 	// Use this for initialization
 	void Start () {
-		//if(PlayerPrefs.HasKey("SonSeviye")) {
-		//	Seviye = PlayerPrefs.GetInt("SonSeviye");
-	    //}
+		//YENİ SEVİYE EKLEYİNCE 'newMaxLevel' GÜNCELLE
+		int newMaxLevel = 103;
+		if( !PlayerPrefs.HasKey("LevelLimit") || PlayerPrefs.GetInt("LevelLimit") < newMaxLevel){
+            PlayerPrefs.SetInt("LevelLimit", newMaxLevel);
+        }
+		if(!PlayerPrefs.HasKey("UnlockedLevels")){
+            PlayerPrefs.SetInt("UnlockedLevels", 1);
+        }
+		if(!PlayerPrefs.HasKey("SelectedLevel")){
+            PlayerPrefs.SetInt("SelectedLevel", 1);
+        }
+
 		Seviye = PlayerPrefs.GetInt("SelectedLevel");
+		if(Seviye== 1){
+			StartButton.SetActive(true);
+		}
 		//GameObject.Find("TopHakkiUI").GetComponent<Text>().text=tophakki.ToString();?????????
 		GameObject.Find("TopHakkiUI").GetComponent<Text>().text="BALLS: " + (tophakki - launchTimes);
 		
 		SeviyeGostergesi= GameObject.Find("SeviyeGöstergesi").GetComponent<Text>();
 		topHakkıBonus=GameObject.Find("TopBonusPuan").GetComponent<Text>();
 	    SeviyeyiArttır();
+
 		
 	}
     public void addToLaunched(int var)
