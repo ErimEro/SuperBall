@@ -8910,6 +8910,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 181535745}
     m_Modifications:
+    - target: {fileID: 7030102993362798069, guid: 8f6b8579e28f19c4693e02b0fa66ee90,
+        type: 3}
+      propertyPath: m_Name
+      value: DigerEngel
+      objectReference: {fileID: 0}
     - target: {fileID: 5053346407954767561, guid: 8f6b8579e28f19c4693e02b0fa66ee90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8964,11 +8969,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7030102993362798069, guid: 8f6b8579e28f19c4693e02b0fa66ee90,
-        type: 3}
-      propertyPath: m_Name
-      value: DigerEngel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f6b8579e28f19c4693e02b0fa66ee90, type: 3}
