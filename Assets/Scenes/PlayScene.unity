@@ -6014,8 +6014,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14, y: -1.5}
-  m_SizeDelta: {x: -236.7, y: -32.8}
+  m_AnchoredPosition: {x: 14, y: 0}
+  m_SizeDelta: {x: -236.7, y: -6.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1728142451
 GameObject:
@@ -6797,7 +6797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 90}
+  m_AnchoredPosition: {x: 0, y: 106}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796208505
@@ -7001,8 +7001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -34}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: 6, y: -25}
+  m_SizeDelta: {x: 500, y: 257.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825295973
 MonoBehaviour:
@@ -7039,11 +7039,14 @@ MonoBehaviour:
     ekrandan \xE7ekti\u011Finiz anda top kazand\u0131\u011F\u0131 h\u0131zla at\u0131l\u0131r.\r\nAlt
     k\u0131s\u0131mdaki renkli bar topun kazand\u0131\u011F\u0131 h\u0131z seviyesini
     g\xF6stermektedir. \r\nAmac\u0131n\u0131z, ekrana bas\u0131p topun h\u0131z\u0131n\u0131
-    ayarlayarak kutuya sokmakt\u0131r.\r\n\r\nENGLISH\r\nThe ball gains speed as long
-    as you touch the screen.\r\nAs soon as you take your hand off the screen, the
-    ball is thrown quickly.\r\nThe colored bar at the bottom shows the speed level
-    the ball gained.\r\nYour goal is to put the ball in the box by pressing the screen
-    and adjusting the speed of the ball.\r\n"
+    ayarlayarak kutuya sokmakt\u0131r.\r\nSeviyeler ilerledik\xE7e bariyerlerin say\u0131s\u0131
+    ve h\u0131z\u0131 artacak, kutu hareketlenecek ve topu kutuya sokmak zorla\u015Facakt\u0131r.\n\r\nENGLISH\r\nThe
+    ball gains speed as long as you touch the screen.\r\nAs soon as you take your
+    hand off the screen, the ball is thrown quickly.\r\nThe colored bar at the bottom
+    shows the speed level the ball gained.\r\nYour goal is to put the ball in the
+    box by pressing the screen and adjusting the speed of the ball.\r\nAs the levels
+    increase, the number and speed of the barriers will increase, the box will move
+    and it will be harder to put the ball in the box.\n"
 --- !u!222 &1825295974
 CanvasRenderer:
   m_ObjectHideFlags: 0
