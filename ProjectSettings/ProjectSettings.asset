@@ -167,7 +167,7 @@ PlayerSettings:
     Android: com.Erogi.MegaBall
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 5
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
