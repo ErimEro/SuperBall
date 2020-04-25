@@ -104,7 +104,7 @@ private bool firstLoad = true;
             PlayerPrefs.SetInt("SelectedLevel", 1);
         }
 
-		Seviye = PlayerPrefs.GetInt("UnlockedLevels");
+		Seviye = PlayerPrefs.GetInt("SelectedLevel");
 		if(Seviye== 1){
 			StartButton.SetActive(true);
 		}
@@ -188,7 +188,7 @@ private bool firstLoad = true;
     
         StartCoroutine(RespawnTop());
 
-            RespawnKutu(); 
+        RespawnKutu(); 
 
 
 		ResetScore();
@@ -1341,6 +1341,7 @@ private bool firstLoad = true;
 
 	void OnApplicationQuit()
     {
+		PlayerPrefs.SetInt("SelectedLevel", Seviye);
 		PlayerPrefs.SetInt("SonSeviye", Seviye-1);
     }
 

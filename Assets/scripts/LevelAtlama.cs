@@ -33,6 +33,8 @@ public class LevelAtlama : MonoBehaviour {
 	}
 	private void LevelFinish() {
 		int currentUnlockedLevel = GameObject.Find("respawner").GetComponent<respawnerScript>().Seviye +1;
+		PlayerPrefs.SetInt("SelectedLevel", currentUnlockedLevel);
+
 		if(PlayerPrefs.GetInt("UnlockedLevels") < currentUnlockedLevel){
 			PlayerPrefs.SetInt("UnlockedLevels", currentUnlockedLevel);
 		}
