@@ -16,7 +16,7 @@ public class SeviyeButonlari : MonoBehaviour
         int totalScore = 0;
 
         for(int i=0; i<LevelLimit; i++){
-                if(i<UnlockedLevels){
+            if(i<UnlockedLevels){
                 GameObject buton = Instantiate(LevelButton, gameObject.transform);
                 buton.GetComponent<levelSelect>().SetLevelValue(i+1);
                 buton.transform.GetChild(0).gameObject.GetComponent<Text>().text = (i+1).ToString();
@@ -25,7 +25,7 @@ public class SeviyeButonlari : MonoBehaviour
                 //print(levelScoreString);
                 buton.transform.GetChild(1).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt(levelScoreString).ToString();
                 totalScore += PlayerPrefs.GetInt(levelScoreString);
-                } else if(i<UnlockedLevels+3){
+                } else if(i<UnlockedLevels+1){
                     GameObject buton = Instantiate(LevelButtonLocked, gameObject.transform);
                     buton.transform.GetChild(0).gameObject.GetComponent<Text>().text = (i+1).ToString();
                 }
